@@ -12,7 +12,7 @@ class Customer(val name: String, val address: String) {
 
 object Customer {
   def main(args: Array[String]): Unit = {
-    val dan = new Customer("Daniel", "54 Redwood Way")
+    val dan = new Customer("Daniel", "Somewhere Street")
     dan.id = "001"
     println("before " + dan.id)
     dan.id = "002"
