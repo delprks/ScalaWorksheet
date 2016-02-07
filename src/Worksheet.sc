@@ -1,3 +1,9 @@
+def formatArgs(args: Array[String]) = args.mkString(", ")
+val res = formatArgs(Array("one", "two"))
+
+assert(res == "one, two")
+
+
 //(0 to 100).foreach(println(_))
 val map = Map("name" -> "daniel", "address" -> "52 Somewhere")
 
@@ -13,7 +19,7 @@ class HelloFactory(name: String) {
   }
 }
 
-object HelloFactory{
+object HelloFactory {
   def main(args: Array[String]) = {
     val factory = new HelloFactory("Dan")
     factory.format()
@@ -51,3 +57,24 @@ stringList.exists(s => s == "dan")
 stringList.foreach(s => println(s))
 stringList.foreach(println)
 stringList.mkString(", ")
+
+val myTuples = (99, "some string")
+println(myTuples._2)
+
+var immutableSet = Set("one", "two")
+immutableSet += "three"
+println(immutableSet)
+
+import scala.collection.immutable.HashSet
+
+val hashSet = HashSet("some", "tomatoes")
+println(hashSet + "corriander")
+
+import scala.collection.mutable.Map
+val treasureMap = Map[Int, String]()
+treasureMap += (1 -> "Go to island")
+treasureMap += (2 -> "dig a hole")
+treasureMap += (3 -> "find treasure")
+println (treasureMap(2))
+
+
