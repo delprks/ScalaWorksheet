@@ -48,4 +48,6 @@ stringList.count(s => s.length == 3) //returns number of elements with length of
 stringList.drop(2)
 stringList.dropRight(1)
 stringList.exists(s => s == "dan")
-
+stringList.foreach(s => println(s))
+stringList.foreach(println)
+stringList.mkString(", ")
