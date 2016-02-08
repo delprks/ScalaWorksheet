@@ -1,3 +1,7 @@
+val a = List(1, 2, 3) == List(2, 3, 4)
+val b = List(1, 2, 3) == List(1, 3, 2)
+val c = List(1, 2, 3) == List(1, 2, 3)
+
 def formatArgs(args: Array[String]) = args.mkString(", ")
 val res = formatArgs(Array("one", "two"))
 
