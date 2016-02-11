@@ -16,3 +16,11 @@ for {
   trimmed = line.trim
   if trimmed.matches(".*filesHere.*")
 } println(file + ": " + line.trim)
+
+def scalaFiles =
+  for {
+    file <- filesHere
+    if file.getName.endsWith(".scala")
+  } yield file
+
+println(scalaFiles.toList)
