@@ -1,4 +1,4 @@
-import java.io.File
+import java.io.{FileNotFoundException, FileReader, File}
 
 val test = if (args.nonEmpty) args(0) else "default"
 
@@ -24,3 +24,21 @@ def scalaFiles =
   } yield file
 
 println(scalaFiles.toList)
+
+val n = 6
+
+val half =
+  if (n % 2 == 0)
+    n / 2
+  else
+    throw new RuntimeException("n must be 0")
+
+println(half)
+
+try {
+  val f = new FileReader("Traits.scalad")
+  println(f.toString)
+} catch {
+  case ex: FileNotFoundException => println("file was not found")
+  case ex: java.io.IOException =>
+}
