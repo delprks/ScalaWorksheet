@@ -16,4 +16,3 @@ def multiTable() = {
 }
 
 println(multiTable())
-
