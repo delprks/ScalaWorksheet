@@ -4,13 +4,13 @@ object FileMatcher {
   private def filesHere = new File(".").listFiles()
 
   def filesEnding(query: String) =
-    fileMatching(query, _.endsWith(_))
+    fileMatching(_.endsWith(query))
 
   def fileContains(query: String) =
-    fileMatching(query, _.contains(_))
+    fileMatching(_.contains(query))
 
-  def fileMatching(query: String, matcher: (String, String) => Boolean) = {
-    for (file <- filesHere; if matcher(file.getName, query))
+  def fileMatching(matcher: String => Boolean) = {
+    for (file <- filesHere; if matcher(file.getName))
       yield file
   }
 }
