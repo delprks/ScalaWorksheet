@@ -5,4 +5,5 @@ val normalOnePlus = normalSum(1, _: Int)
 
 println(normalSum(2, 3))
 println(curriedSum(1)(2))
+println(onePlus(3))
 println(normalOnePlus(4))
