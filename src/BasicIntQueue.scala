@@ -17,8 +17,6 @@ class BasicIntQueue extends IntQueue {
   def show() = buf.toList
 }
 
-class MyQueue extends BasicIntQueue with Doubling
-
 val intQueue = new BasicIntQueue
 
 intQueue.put(2)
@@ -26,7 +24,7 @@ intQueue.put(4)
 
 println(intQueue.show())
 
-val myQueue = new MyQueue
+val myQueue = new BasicIntQueue with Doubling //this mixes in the trait and overrides the put method
 
 myQueue.put(6)
 myQueue.put(8)
