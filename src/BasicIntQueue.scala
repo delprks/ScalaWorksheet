@@ -9,6 +9,16 @@ trait Doubling extends IntQueue {
   abstract override def put(x: Int) = super.put(x * 2)
 }
 
+trait Incrementing extends IntQueue {
+  abstract override def put(x: Int) = super.put(x + 1)
+}
+
+trait Filtering extends IntQueue {
+  abstract override def put(x: Int) =
+    if (x > 0)
+      super.put(x)
+}
+
 class BasicIntQueue extends IntQueue {
   private val buf = new ArrayBuffer[Int]
 
@@ -30,3 +40,10 @@ myQueue.put(6)
 myQueue.put(8)
 
 println(myQueue.show())
+
+val newQueue = new BasicIntQueue with Incrementing with Filtering
+
+newQueue.put(2)
+newQueue.put(-1)
+
+println(newQueue.show())
