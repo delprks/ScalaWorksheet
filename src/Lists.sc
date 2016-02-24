@@ -82,3 +82,24 @@ val variedNumList: List[Int] = List(1, 2, 3, -4, -5)
 
 val spannedList: (List[Int], List[Int]) = variedNumList span(_ > 0)
 
+variedNumList forall(_ > 3)
+variedNumList exists(_ < 3)
+
+def sum(xs: List[Int]): Int = (4 /: xs) (_ + _) // adds 4 to the beginning
+
+sum(numericalList)
+
+("the result is: " /: stringList) (_ + " " + _)
+
+//without the space at the beginning:
+(stringList.head /: stringList.tail) (_ + " " + _)
+
+val revSortedList: List[Int] = numericalList sortWith(_ > _)
+
+val sortedStrList: List[String] = stringList sortWith(_.length < _.length)
+
+List.range(1, 5)
+
+List.range(1, 5, 2)
+
+List.range(5, 1, -2)
