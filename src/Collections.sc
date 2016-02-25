@@ -22,3 +22,7 @@ bufferedArray += 2
 bufferedArray(0)
 bufferedArray.length
 
+def hasUpperCase(s: String) = s.exists(_.isUpper)
+
+hasUpperCase("This has upper case letters")
+hasUpperCase("this doesn't have upper case letters")
