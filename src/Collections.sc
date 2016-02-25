@@ -65,3 +65,6 @@ val strTreeSet = TreeSet("a", "e", "b", "c")
 
 val treeMap = TreeMap(5 -> "there", 1 -> "xpv")
 
+val colors = Set("blue", "red", "green")
+
+val orderedColors = TreeSet[String]() ++ colors
