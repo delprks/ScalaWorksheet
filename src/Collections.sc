@@ -1,3 +1,4 @@
+import scala.collection.immutable.{TreeMap, TreeSet}
 import scala.collection.mutable
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 
@@ -58,3 +59,9 @@ map("hello") = 1
 map("there") = 2
 
 map
+
+val treeSet = TreeSet(3,5,6,4,2,1)
+val strTreeSet = TreeSet("a", "e", "b", "c")
+
+val treeMap = TreeMap(5 -> "there", 1 -> "xpv")
+
