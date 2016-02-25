@@ -1,4 +1,4 @@
-import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 
 val fiveInts = Array[Int](5)
 fiveInts.head
@@ -12,4 +12,13 @@ bufferList += 2
 3 +=: bufferList
 
 bufferList.toList
+
+val bufferedArray: ArrayBuffer[Int] = new ArrayBuffer[Int]()
+
+bufferedArray += 1
+bufferedArray += 2
+3 +=: bufferedArray
+
+bufferedArray(0)
+bufferedArray.length
 
