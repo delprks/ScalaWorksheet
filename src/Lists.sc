@@ -103,3 +103,14 @@ List.range(1, 5)
 List.range(1, 5, 2)
 
 List.range(5, 1, -2)
+
+List.fill(2)('a')
+List.fill(2, 3)('b')
+
+List.tabulate(5)(n => n * n)
+
+List.concat(List('a', 'b'), List('c', 'd'))
+
+List('a', 'b') ::: List('c', 'd')
+
+(List(10, 20), List(3, 4, 5)).zipped.map(_ * _)
