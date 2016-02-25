@@ -52,3 +52,9 @@ nums.size
 nums.contains(4)
 nums.contains(3)
 
+val map = mutable.Map.empty[String, Int]
+
+map("hello") = 1
+map("there") = 2
+
+map
