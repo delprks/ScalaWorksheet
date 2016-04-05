@@ -1,28 +1,21 @@
-for (x <- List(1, 2); y <- List("one", "two"))
-  yield (x, y)
+val longTitle = "BBC Radio One"
+val pattern = "[^BBC ]\\w".r
 
-case class Book(title: String, authors: String*)
+val shortTitle = pattern.findFirstIn(longTitle).get
 
-val books: List[Book] =
-  List(
-    Book(
-      "Structure and Interpretation of Computer Programs",
-      "Abelson, Harold", "Sussman, Gerald J."
-    ), Book(
-      "Principles of Compiler Design",
-      "Aho, Alfred", "Ullman, Jeffrey"
-    ),
-    Book(
-      "Programming in Modula-2",
-      "Wirth, Niklaus"
-    ), Book(
-      "Elements of ML Programming",
-      "Ullman, Jeffrey"
-    ), Book(
-      "The Java Language Specification", "Gosling, James",
-      "Joy, Bill", "Steele, Guy", "Bracha, Gilad"
-    )
-  )
+val shorterTitle = {val titleArr = longTitle.split(" "); if (titleArr(0) == "BBC") titleArr.drop(1).mkString(" ") else longTitle}
 
-for (b <- books; a <- b.authors; if a startsWith("Gos"))
-  yield b.title
+
+
+abstract case class Programme private(typ: String)
+case class episode(typ: String, value: String)
+
+object Programme {
+  def apply(typ: String) = {
+    if (typ == "episode")
+      episode(typ, "some additional value")
+  }
+}
+
+val testing = Programme("episode")
+
