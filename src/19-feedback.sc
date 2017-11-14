@@ -1,16 +1,3 @@
-/*
- * The Amazon website has a question and answer feature on product detail pages.
- * When a customer submits a question, the seller, owners of the product
- * and reviewers are asked the question through email. We can solicit sellers 30 times a day,
- * but owners and reviewers only fortnightly.
- *
- *
- * The task is to write the part of the service that decides which customers to solicit,
- * given we have a question that needs an answer. There are generally data sources available
- * for the information you may need to make the determination.
- */
-
-
 case class Question(productId: Int, question: String)
 
 object UserType extends Enumeration {
